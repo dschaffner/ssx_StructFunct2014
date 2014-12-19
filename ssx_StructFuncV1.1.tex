@@ -223,7 +223,7 @@ A single PDF can only describe the nature of the data in terms of its relative d
 
 Further insight into the physical nature of the plasma can be gained by comparing these PDFs over a range of scales. This can be accomplished qualitatively by examining how the PDFs themselves change, but can also be quantitatively accomplished by calculating moments of these distributions, also know as structure functions. By looking at behavior of these structure functions. An additional point of information can be gained by the slope of these structure functions and if the change as a function of moment. A constant slope as a function of moment is indicative of self-similar behavior. Changing slopes however, indicate non-self-similar behavior. These distinctions again can be used to elucidate possible physical mechanisms at play in the plasma. 
 
-In particular, it has been shown that differences in self-similarity exist between inertial range and dissipation data in the solar wind~\cite{kiyani2013}. Using the structure function analysis, the slope of the structure functions of the inertial range were not linear as a function of order, indicating that the inertial range turbulent fluctuations in the solar wind did not indicate self-similarity of turbulent structure. On the other hand, the same analysis for dissipation range structure functions exhibited linear scaling---apparently, the physical mechanism behind the dissipation in the solar wind has a self-similar nature.
+In particular, it has been shown that differences in self-similarity exist between inertial range and dissipation data in the solar wind~\cite{kiyani2013}. Using the structure function analysis, the slope of the structure functions of the inertial range were not linear as a function of order, indicating that the inertial range turbulent fluctuations in the solar wind did not indicate self-similarity of turbulent structure. On the other hand, the same analysis for dissipation range structure functions exhibited linear scaling---apparently, the physical mechanism behind the dissipation in the solar wind has a self-similar, or scale-invariant nature.
 
 \section{Temporal and Spatial PDFs of Increments}\label{sec:pdfs}
 
@@ -233,7 +233,35 @@ In particular, it has been shown that differences in self-similarity exist betwe
 \caption{\label{fig:pdfs} }
 \end{figure*}
 
+Representative PDFs of both temporal and spatial magnetic field magnitude ($\Delta |B|$) increments are shown in Figure~\ref{fig:pdfs} with temporal PDFs on the left and spatial PDFs on the right. Each PDFs is scaled to its own standard deviation and total count so that they can be cross compared. The increments chosen for the temporal PDFs are $0.092\mu s$, $0.46\mu s$, and $1.23\mu s$ which correspond to frequencies of $10.8MHz$, $2.2MHz$, and $812kHz$ respectively. These three times also approximately correspond to three different regimes of the frequency spectra, called for lack of more accurate description the dissipation, transition and inertial region. All three PDFs exhibit intermittent behavior as indicated by the wings or ''fat tails`` for large fluctuation values which reflect larger counts compared to a true Gaussian distribution which is indicated by the dashed red curves. Note, though, that the qualitative ''level`` of intermittency decreases with increasing temporal increment, consistent with previous intermittency analyzes on SSX~\cite{schaffner2014a,schaffner2014b}, as well as solar wind results~\cite{bruno2013}.
+
+The increments chosen for the spatial PDFs are $0.46cm$, $0.92cm$, and $1.38cm$, which corresponds to the minimum, double the minimum, and triple the minimum separation possible given the probe array in the SSX. Unlike the temporal data, the spatial data is not believed to probe any as far into dissipation range scales (for reference, an ion inertial length of 0.6cm  and an ion gyroradius of 0.1cm is calculated in this plasma). Thus the spatial data is likely representative of inertial range turbulence and at most transition range. The resulting PDFs support this notion as they tend to have a more Gaussian-like feature for small fluctuations and only slightly elevated tails. There does appear to be a trend toward increasing Gaussian-ness with increasing increment similar to the temporal data. The curves do no appear as smooth as the temporal data though, as the histograms have larger breaks---in particular, the $0.46cm$ increment PDF. This potentially reflects both a lower amount of increment statistics available for the spatial measurement as well as the possible variations in the PDF due to spatial variation. 
+
+As discussed before, the use of PDFs of increments can clearly demonstrate the lack or presence of intermittent behavior in a signal, however in a primarily qualitative way. In order to demonstrate quantitative scaling behavior, and be able to extra more physical interpretations from the data, a structure function analysis is needed and is discussed in the next section.
+
 \section{Structure Functions and Scaling with Order}\label{sec:structs}
+
+To produce a more quantitative metric from the PDFs of increments, one can calculate moments of the histogram to any order $p$, and for each time or spatial delay $\Delta x$. This is equivalent to calculating the structure function for the magnetic field increments,
+%
+\begin{equation}
+S^{p}(\Delta x) = \langle|B(x_{j}+\Delta x)-B(x_{j})|^{p}\rangle
+\label{eq:structfunc}
+\end{equation}
+%
+where $p$ is the order of the power and the angle brackets indicate summation over all $j$ elements of B. Integer values of $p$ correspond to the moments of the PDF ($p=2$ is the second moment, $p=3$ is the third moment, etc.) though given the form of Equation~\ref{eq:structfunc}, $p$ is not restricted to integer values in the structure function formalization.
+
+\begin{figure*}[!htbp]
+\centerline{
+\includegraphics[width=17cm]{Bmod_timeandspace_StructureFunction100313Shots1to40_forStructFuncpaper.png}}
+\caption{\label{fig:structfuncs} }
+\end{figure*}
+
+Figure~\ref{fig:structfuncs} shows the structure functions, $S^{p}(\Delta x)$, for temporal ($\Delta x = \Delta \tau$) data on the left and spatial ($\Delta x = \Delta r$) data on the right. The integer structure functions from $p=1$ to $p=6$ are shown.
+
+add struct function of a gaussian distribution.
+
+To see intermittency most clearly, need a normaloized structue function. unnormalized Strcture function demonstrates a distinctive change in the scaling at different time scsales. that is different scaling behavior as a function of tau. we can model the scaling as S = a*tau^\psi
+
 
 
 \section{Conclusions}\label{sec:conclusions}
@@ -244,6 +272,9 @@ In particular, it has been shown that differences in self-similarity exist betwe
 % ----------------------------------------------------------------
 \section*{References}
 \begin{thebibliography}{99}
+
+\bibitem{bruno2013}
+R. Bruno and V. Carbone. Living Rev Solar Phys {\bf 10} (2013).
 
 \bibitem{alexandrova09} O. Alexandrova, J. Saur, C. Lacombe, A. Mangeney, J. Mitchell, S.J. Schwartz, and P. Robert. Universality of Solar Wind Turbulent Spectrum from MHD to Electron Scales. Phys. Rev. Lett. {\bf 103} 165003 (2009).
 
