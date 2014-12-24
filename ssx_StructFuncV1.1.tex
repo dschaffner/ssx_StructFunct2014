@@ -229,11 +229,11 @@ In particular, it has been shown that differences in self-similarity exist betwe
 
 \begin{figure*}[!htbp]
 \centerline{
-\includegraphics[width=17cm]{pdfs.png}}
+\includegraphics[width=17cm]{Bmod_pdf_temporal_and_spatial_100313Shots41to80_forStructFuncpaper.png}}
 \caption{\label{fig:pdfs} }
 \end{figure*}
 
-Representative PDFs of both temporal and spatial magnetic field magnitude ($\Delta |B|$) increments are shown in Figure~\ref{fig:pdfs} with temporal PDFs on the left and spatial PDFs on the right. Each PDFs is scaled to its own standard deviation and total count so that they can be cross compared. The increments chosen for the temporal PDFs are $0.092\mu s$, $0.46\mu s$, and $1.23\mu s$ which correspond to frequencies of $10.8MHz$, $2.2MHz$, and $812kHz$ respectively. These three times also approximately correspond to three different regimes of the frequency spectra, called for lack of more accurate description the dissipation, transition and inertial region. All three PDFs exhibit intermittent behavior as indicated by the wings or ''fat tails`` for large fluctuation values which reflect larger counts compared to a true Gaussian distribution which is indicated by the dashed red curves. Note, though, that the qualitative ''level`` of intermittency decreases with increasing temporal increment, consistent with previous intermittency analyzes on SSX~\cite{schaffner2014a,schaffner2014b}, as well as solar wind results~\cite{bruno2013}.
+Representative PDFs of both temporal and spatial magnetic field magnitude ($\Delta |B|$) increments are shown in Figure~\ref{fig:pdfs} with temporal PDFs on the left and spatial PDFs on the right. Each PDFs is scaled to its own standard deviation and total count so that they can be cross compared. The increments chosen for the temporal PDFs are $0.092\mu s$, $0.46\mu s$, and $1.85\mu s$ which correspond to frequencies of $10.8MHz$, $2.2MHz$, and $541kHz$ respectively. These three times also approximately correspond to three different regimes of the frequency spectra, called for lack of more accurate description the dissipation, transition and inertial region. All three PDFs exhibit intermittent behavior as indicated by the wings or ''fat tails`` for large fluctuation values which reflect larger counts compared to a true Gaussian distribution which is indicated by the dashed red curves. Note, though, that the qualitative ''level`` of intermittency decreases with increasing temporal increment, consistent with previous intermittency analyzes on SSX~\cite{schaffner2014a,schaffner2014b}, as well as solar wind results~\cite{bruno2013}.
 
 The increments chosen for the spatial PDFs are $0.46cm$, $0.92cm$, and $1.38cm$, which corresponds to the minimum, double the minimum, and triple the minimum separation possible given the probe array in the SSX. Unlike the temporal data, the spatial data is not believed to probe any as far into dissipation range scales (for reference, an ion inertial length of 0.6cm  and an ion gyroradius of 0.1cm is calculated in this plasma). Thus the spatial data is likely representative of inertial range turbulence and at most transition range. The resulting PDFs support this notion as they tend to have a more Gaussian-like feature for small fluctuations and only slightly elevated tails. There does appear to be a trend toward increasing Gaussian-ness with increasing increment similar to the temporal data. The curves do no appear as smooth as the temporal data though, as the histograms have larger breaks---in particular, the $0.46cm$ increment PDF. This potentially reflects both a lower amount of increment statistics available for the spatial measurement as well as the possible variations in the PDF due to spatial variation. 
 
@@ -252,17 +252,51 @@ where $p$ is the order of the power and the angle brackets indicate summation ov
 
 \begin{figure*}[!htbp]
 \centerline{
-\includegraphics[width=17cm]{Bmod_timeandspace_StructureFunction100313Shots1to40_forStructFuncpaper.png}}
+\includegraphics[width=17cm]{Bmod_timeandspace_StructureFunction100313Shots41to80_forStructFuncpaper.png}}
 \caption{\label{fig:structfuncs} }
 \end{figure*}
 
-Figure~\ref{fig:structfuncs} shows the structure functions, $S^{p}(\Delta x)$, for temporal ($\Delta x = \Delta \tau$) data on the left and spatial ($\Delta x = \Delta r$) data on the right. The integer structure functions from $p=1$ to $p=6$ are shown.
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Bmod_timeandspace_Flatness100313Shots41to80_forStructFuncpaper.png}}
+\caption{\label{fig:flatness} }
+\end{figure}
 
-add struct function of a gaussian distribution.
+Analysis of structure functions can provide a number of features of the fluctuations. The slope of the structure function indicates the relative level of intermittency compared between two signals. That is, the steeper the slope, the more intermittent (i.e. the larger the ''fat tails``) is the signal. A flat line is the extreme case and indicates a lack of intermittency in the signal. As one woud expect, the structure function of a timeseries generated from a normal distribution has a flat structure function. Changes in slope with scale indicates a change in intermittency as a function of scale. It should be noted that this trend is not a perfect predictor of the presense of intermitttency however. It can be shown that a time-series of fractional Brownian motion can be constructed with the same structure function slope(Hnat GRL 2003), but fBm produces a Gaussian probability distribution of increments (DOES IT?). However, when intermittency is known to be present based on the PDF of increments (as is true for this SSX dataset) then the relationship between slope and degree of intermittency generally holds true.
 
-To see intermittency most clearly, need a normaloized structue function. unnormalized Strcture function demonstrates a distinctive change in the scaling at different time scsales. that is different scaling behavior as a function of tau. we can model the scaling as S = a*tau^\psi
+Figure~\ref{fig:structfuncs} shows the structure functions, $S^{p}(\Delta x)$, for temporal ($\Delta x = \Delta \tau$) data on the left and spatial ($\Delta x = \Delta r$) data on the right. The integer structure functions from $p=1$ to $p=6$ are shown. The structure functions vary as a function of $\tau$ or $r$ which confirms the presence of intermittency in the signal. For the temporal results, it is clear that this variation changes a function of time scale, with steeper slopes at small values of $\tau$ transitioning to shallower slopes at large values of $\tau$. This indicates that the relative degree of intermittency of the signal increases when analyzed at smaller scales. The transition range is also consistent with the transition from the inertial to the dissipation range of the cascade as determined by the change in spectral index of the frequency spectrum. This difference between inertial and dissipation range intermittency suggests that the physical mechanism underlying the dissipation dynamics has a more intermittent nature to it. Explanations for this behavior in the solar wind have typically center around the presence of current sheets in the magnetic turbulence(Osmin PRL 2014). The observation of this difference between dissipation and inertial range fluctuations in this laboratory plasma suggests a similar phenomena~\cite{schaffner2014b}. 
+
+The spatial structure function do not show a variation with scale; however the slopes and thus the degree of intermittency is consistant with the temporal sturcture functions in the inertial range. Since the spatial meausrements can only probe inertial range scales in the plasma, this result supports the distinction between dissipation and inertial range intermittency seen in the temporal data.
+
+A final characteristic, self-similarity of the turbulence, can be extracted from the structure function analysis by examining the slope of the structure functions as a function of order. In this context, the self-similarity is a qualitative measure of how alike fluctuations appear at different scales. A fractal from chaos theory is a construct that exhibits self-similarity. The red lines in Figure~\ref{fig:structfunc} are fits to the structure functions. In the temporal data, fits are done to two separate regions that correspond to the dissipation and inertial regions based on spectral frequency analysis, while the spatial data has only one fit for the entire region. A fit is made in each of these regions for each structure function using order $p$ which ranges between $0.1$ and $10$ in steps of $0.1$. The results of this scan are displayed in Figure~\ref{fig:slovesvsmom} for both time and space. The five separate magnetic field measurements are shown now, with inertial range fits indicate by solid lines and dissipation range fits indicate with dashed lines. In this construction, a timeseries that exhibits self-similarity would produce a line with a constant slope. As the increments are raised to increasingly higher powers, the value of the structure function should also increase exponentially. If the signal is self-similar, an increment between two points in the time series at one scale should have on average the same relative increment between two points at a different scale. In other words, a big fluctuation compared to a small fluctuation at one scale should appear to have the same relative ratio at a different scale. Thus, the structure function should change at a constant rate based on this ratio. If the signal is not self-similar, then the ratio is not constant and differences are increasingly accentuated by the raised exponent resulting in a non-linear scaling.
+
+The original Kolmogorov turbulence theory in fact predicted a self-similar scaling such that the structure function slope would be equal to one-third of the power. The dashed purple line indicates this prediction in Figure~\ref{fig:slopesvsmom}. The inertial range curves for all five temporal magnetic measurements in Figure~\ref{fig:slopesvsmom}(a) sit relatively near the Kolmogorov theory line but none of the lines exhibiting completely linear behavior. This indicates that the inertial range fluctuations are not self-similar. The spatial curves in Figure~\ref{fig:slopesvsmom}(b) support this observation.
+
+The dissipation range curves, in contrast, are clearly linear. This indicates that the dissipation range fluctuations are self-similar while also having a larger degree of self-similarity than inertial range fluctuations.
+
+Like the Gaussian fits in Figure~\ref{pdfs}, the structure functions can be compared to the level of Gaussianness in the signal. Using a normalized structure function, a Gaussian timeseries would have a constant vale. For example, taking the normalized fourth order structure function (called kurtosis or flatness) yields a value of 3. 
+
+%To see intermittency most clearly, need a normaloized structue function. unnormalized Strcture function demonstrates a distinctive change in the scaling at different time scsales. that is different scaling behavior as a function of tau. we can model the scaling as S = a*tau^\psi
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Bfield_StructureFunctionSlope_vs_Moment_timeandspace_100313Shots41to80_forStructFuncpaper.png}}
+\caption{\label{fig:slopevsmom} }
+\end{figure}
+
+\section{Helicity Scaling}
 
 
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Bmod_StructureFunctionSlope_vs_Moment_helicityscan.png}}
+\caption{\label{fig:helscan} }
+\end{figure}
+
+\section{Discussion}
+
+%physical connections
 
 \section{Conclusions}\label{sec:conclusions}
 
