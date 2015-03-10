@@ -132,96 +132,29 @@ The structure functions and PDFs are constructed by taking differences or increm
 
 \section{Experiment}\label{sec:experiment}
 
-The turbulence injection process in a laboratory experiment is naturally going to have a different origin than a space physics process; however, it is assumed that processes after the energy injection state (i.e. energy transfer in the inertial range and dissipation) will be similar enough so that exploration of the physics behind them in the laboratory can be beneficial to an overall understanding.
-
-The energy for the turbulence found in the MHD wind-tunnel in the Swarthmore Spheromak Experiment originates in the plasma production process. As diagrammed in Figure~\ref{fig:moviestills}, a plasma gun configuration sits on one end of a 15.5cm diameter, 86cm long cylindrical copper column which constitutes the MHD wind-tunnel. The gun consists of a tungsten-coated 4cm diameter inner electrode placed concentrically within the copper cylinder which serves as an outer electrode. An axially aligned wire coil surrounds both electrodes and current is supplied to the coil to produce a known amount of magnetic flux---between 0 and 1.5mWb---axially through the inner electrode: this flux is referred to as stuffing flux, $\Phi$. A 1mF capacitor bank, charged to 4kV is discharged across the electrodes; this voltage fully ionizes a small volume of hydrogen gas puffed in just before the discharge. Radial currents through this newly produced plasma push the plasma down the column and into the fringe magnetic fields which tend to resist this push and stuff the progress of the plasma (hence the term, stuffing flux). Given enough current, and thus large enough $J\times B$ force, the plasma distends the stuffing fields until they break off, forming a self-contained magnetic field structure called a spheromak~\cite{barnes86,jarboe93}. This structure is visualized in Figure~\ref{fig:moviestills}(a) using Hall-MHD simulation generated field lines (in blue). Since the spheromak has both polodial and torodial magnetic fields, the relative ratio of field strength between these two directions is quantified by the magnetic helicity, defined as,
-\begin{equation}
-K_{B} = \int A \cdot B dV
-\label{eq:helicity_th}
-\end{equation}
-where A is the vector potential and dV is the volume element. Previous work on SSX has shown that magnetic helicity of the plasma scales approximately linearly with the amount of stuffing flux applied to the gun~\cite{schaffner14b}.
-
-Figure~\ref{fig:moviestills}(a)-(d) illustrates the experimental procedure. The generalized turbulence cascade begins with this compact magnetic structure (Figure~\ref{fig:moviestills}(a)). Inside the wind-tunnel, the magnetic structure is energetically unstable~\cite{bondeson81,jarboe93}---the structure will begin to tilt over and expand into the remainder of the wind-tunnel (Figure~\ref{fig:moviestills}(b)). Because the column is copper, and thus flux conserving, the magnetic helicity is conserved unlike the magnetic energy~\cite{taylor86}; thus, the structure also begins to twist as it tilts over as seen in Figure~\ref{fig:moviestills}(c). The free energy released in the fall-over materializes as fluctuations in the field, generating the turbulent cascade. The turbulent fluctuations are most prominent in figure~\ref{fig:moviestills}(d). In the actual experiment, the gun typically injects more than a single, self-contained structure so while an initial structure is decaying, more compact field energy is being injected~\cite{barnes86}. This allows for a time frame of stationary fluctuations that is used in the turbulence analysis.
-
-The turbulence data is extracted from magnetic, density and flow measurements during this stationary period. Magnetic fluctuations are recorded using 3mm diameter, single loop pick-up coils located at 16 radial locations along the radius of the midplane of the column as indicated in Figure~\ref{fig:moviestills}(a). Each radial position has three orthogonal loops oriented along the axial, radial and azimuthal directions of the column. A 64MHz, 14-bit DTaq digitizer records $dB/dt = \dot{B}$ timeseries data which is converted into magnetic fluctuation data in frequency space (as discussed in Section~\ref{sec:analysis}). Line-integrated density data is measured with a HeNe interferometer located 21.5cm off of the midplane and flow fluctuations are estimated from a Mach probe located on the edge of the copper column at the midplane (as indicated in Figure~\ref{fig:moviestills}(a)). Spectra of $M_{z}(t)$ are directly reported as a proxy for $V_{z}(t)$, since $\tilde{M}\sim \tilde{V}/C_{s}$ where $C_{s}=(T_{e}/m_{i})^{1/2}$ and is approximately constant with a measured value of $T_{e}=10eV$~\cite{zhang11, schaffner14b}. Bulk flow of the plasma is estimated with time-of-flight measurements between the density signal at z=-21.5cm and the magnetic signal at the midplane, z=0. The plasma is also generated with a set amount of magnetic helicity which is governed by initial conditions of the plasma gun source---namely, amount of flux generated in the gun core (the stuffing flux). The helicity can be scanned~\cite{schaffner14b}, but in this work focus is primarily on two states: a state with non-zero helicity, $K_{B}\neq 0$, generated by 1.0mWb of flux in the gun core and a state with no injected helicity, $K_{B}=0$. Table~\ref{tab:params} indicates typical plasma parameter values for these two states.
-
-%1mWB run
-%dens 1.39e15 cm^-3
-%bfield 5283 G
-%Ti = 23 eV
-%bulk flow = 20km/s
-
-%results
-%Va = 309km/s
-%Beta = 0.07
-%Cs = 31km/s
-%f_i = 8MHz
-%nu_i = 6MHz
-%rho_i = 0.09cm
-%c/w_pi = 0.61cm
-%ion_mfp = 0.16cm
-%doppler shifted c/wpi = 3MHz
-%doppler shifted rho_i = 20MHz
-
-%0mWb run
-%dens 2.84e15 cm^-3
-%bfield 747 G
-%Ti = 17 eV
-%bulk flow = 20km/s
-
-%results
-%Va = 30km/s
-%Beta = 5.5
-%Cs = 31km/s
-%f_i = 1.1MHz
-%nu_i = 19MHz
-%rho_i = 0.56cm
-%c/w_pi = 0.43cm
-%ion_mfp = 0.05cm
-%doppler shifted c/wpi = 4.3MHz
-%doppler shifted rho_i = 3.3MHz
-
-\begin{table}
-\caption{\label{tab:params}MHD wind tunnel plasma parameters during the equilibrium epoch for the present configuration of SSX for non-zero helicity ($K_{B}\neq 0$) and for zero helicity($K_{B}=0$) states. The table has separate sections for directly measured parameters and for quantities computed from these values.}
-\begin{tabular}{c|cc}
-\toprule
-Parameter&$K_{B}\neq 0$&$K_{B}=0$\\
-				 &(1.0mWb)             &(0.0mWb)\\
-\hline
-$Measured$&&\\
-\hline
-$\langle |B|\rangle [kG]$&5.283&0.747\\
-$\langle n\rangle \times 10^{15} [cm^{-3}]$&1.39&2.84\\
-$\langle T_{i}\rangle [eV]$&23&17\\
-$V_{bulk}$ $[km/s]$&20&20\\
-\hline
-$Computed$&&\\
-\hline
-$\beta$&0.07&5.5\\
-$V_{a} [km/s]$&309&30\\
-$C_{s} [km/s]$&31&31\\
-$\rho_{i} [cm]$&0.09&0.56\\
-$\delta_{i} [cm]$&0.61&0.43\\
-$\lambda_mfp^{i} [cm]$&0.16&0.05\\
-$f_{ci} [MHz]$&8&1.1\\
-$\nu_{i} [MHz]$&6&19\\
-$f_{\delta i} [MHz]$&3&4.3\\
-$f_{\rho i} [MHz]$&20&3.3\\
-\hline
-\end{tabular}
-\end{table}
-
-Each discharge of the plasma gun constitutes an experimental shot and typically lasts for about 120$\mu s$ from formation of the magnetic fields to their eventual resistive dissipation. The turbulence data reported here is extracted from a time range of 40 to 60$\mu s$. This is the epoch during each shot where the fluctuations are most stationary; energy at the probe location is balanced between injection energy from the gun and loss through advection away from the probe and through possible dissipation mechanisms (including resistive decay of the currents). An ensemble average for each helicity state is constructed from 40 shots.
+Magnetohydrodynamic turbulent fluctuations are generated inside the wind tunnel configuration of the Swarthmore Spheromak Experiment (SSX) using a plasma gun source inside a flux-conserving copper boundary. This copper cylinder is 15.5cm in diameter and 86cm long and situated inside a highly-evacuated chamber ($\approx 1 \times 10^{-8}$ Torr). The details of the gun source and production of magnetic fluctuations have been previously reported~\cite{schaffner2014c,brown14,brown15a}. The data analyzed in this paper is of magnetic fluctuations using an array of sixteen magnetic pickup channels. Each channel consists of a single-loop of magnetic wire, 3mm in diameter. Three loops are oriented in each cylindrical coordinate direction ($B_{r},B_{\theta},B_{z}$) and each triplet is separated by 0.46cm spanning from about 1cm off the cylindrical axis to the edge of the cylinder boundary. The injected helicity of the plasma is scanned from $0$ to $7\times 10^{-5}~Wb^{2}$ which corresponds to a scan of the amount of flux provided to the gun core--from $0$ to $1.5~mWb$~\cite{schaffner2014b}.
 
 \section{Analysis Techniques}\label{sec:analysis}
 
-The structure of the turbulent plasma is analyzed here through an evaluation of its intermittent character; the primary method for quantifying this characteristic is through the construction of probability distribution functions (PDFs) of increments. The increments can be in terms of a spatial division or a temporal division. In the context of this experiment, the spatial increments are in units of separation distance between probe locations ($\Delta r_{min} = 0.4cm$), while the temporal increments are in units of sampling cadence ($\Delta \tau_{min} = 154ns$) which corresponds to the sampling frequency of 65MHz. Increments are then increased in multiples of these minimum values. Maximum separation values are limited by physical distance or data acquisition time span, as well the ability to generate enough statistics for a valid calculation.
+The structure of the turbulent plasma is analyzed here through an evaluation of its intermittent character; the primary method for quantifying this characteristic is through the construction of probability distribution functions (PDFs) of increments. The increments can be in terms of a spatial division or a temporal division. In the context of this experiment, the spatial increments are in units of separation distance between probe locations ($\Delta r_{min} = 0.46cm$), while the temporal increments are in units of sampling cadence ($\Delta \tau_{min} = 154ns$) which corresponds to the sampling frequency of 65MHz. Increments are then increased in multiples of these minimum values. Maximum separation values are limited by physical distance or data acquisition time span, as well the ability to generate enough statistics for a valid calculation.
 
-For a given increment, $\Delta x$, the PDF of increments is constructed by computing 
+For a given increment, $\Delta x$, the PDF of increments is constructed by computing and histogramming a list of $\Delta B$'s,
+\begin{equation}
+\Delta B = |B(x_{j}+\Delta x)-B(x_{j})|
+\label{eq:increment}
+\end{equation}
+which can then be normalized to the standard deviation and total count of the histogram.
 
 A single PDF can only describe the nature of the data in terms of its relative distribution with respect to a Gaussian distribution. Large excursions of values in the tail values of the distribution are then indicative of intermittent behavior in the time series signal---i.e. large jumps in values away outside of the standard deviation of the mean. Physically, these excursions can be identified with physical mechanisms in the plasma.
 
-Further insight into the physical nature of the plasma can be gained by comparing these PDFs over a range of scales. This can be accomplished qualitatively by examining how the PDFs themselves change, but can also be quantitatively accomplished by calculating moments of these distributions, also know as structure functions. By looking at behavior of these structure functions. An additional point of information can be gained by the slope of these structure functions and if the change as a function of moment. A constant slope as a function of moment is indicative of self-similar behavior. Changing slopes however, indicate non-self-similar behavior. These distinctions again can be used to elucidate possible physical mechanisms at play in the plasma. 
+Further insight into the physical nature of the plasma can be gained by comparing these PDFs over a range of scales. This can be accomplished qualitatively by examining how the PDFs themselves change, but can also be quantitatively accomplished by calculating moments of these distributions, also know as structure functions. The structure function can be constructed for a given $\Delta x$ by computing the average of the increments raised to some power, $p$, as in,
+\begin{equation}
+S^{p}(\Delta x) = \langle|B(x_{j}+\Delta x)-B(x_{j})|^{p}\rangle
+\label{eq:structfunc}
+\end{equation}
+where j indicates the elements summed over. 
+
+An additional point of information can be gained by examining slope of these structure functions and seeing if the slope changes as a function of moment. A constant slope as a function of moment is indicative of self-similar behavior. Changing slopes however, indicate non-self-similar behavior. These distinctions again can be used to elucidate possible physical mechanisms at play in the plasma. 
 
 In particular, it has been shown that differences in self-similarity exist between inertial range and dissipation data in the solar wind~\cite{kiyani2013}. Using the structure function analysis, the slope of the structure functions of the inertial range were not linear as a function of order, indicating that the inertial range turbulent fluctuations in the solar wind did not indicate self-similarity of turbulent structure. On the other hand, the same analysis for dissipation range structure functions exhibited linear scaling---apparently, the physical mechanism behind the dissipation in the solar wind has a self-similar, or scale-invariant nature.
 
@@ -233,22 +166,15 @@ In particular, it has been shown that differences in self-similarity exist betwe
 \caption{\label{fig:pdfs} }
 \end{figure*}
 
-Representative PDFs of both temporal and spatial magnetic field magnitude ($\Delta |B|$) increments are shown in Figure~\ref{fig:pdfs} with temporal PDFs on the left and spatial PDFs on the right. Each PDFs is scaled to its own standard deviation and total count so that they can be cross compared. The increments chosen for the temporal PDFs are $0.092\mu s$, $0.46\mu s$, and $1.85\mu s$ which correspond to frequencies of $10.8MHz$, $2.2MHz$, and $541kHz$ respectively. These three times also approximately correspond to three different regimes of the frequency spectra, called for lack of more accurate description the dissipation, transition and inertial region. All three PDFs exhibit intermittent behavior as indicated by the wings or ''fat tails`` for large fluctuation values which reflect larger counts compared to a true Gaussian distribution which is indicated by the dashed red curves. Note, though, that the qualitative ''level`` of intermittency decreases with increasing temporal increment, consistent with previous intermittency analyzes on SSX~\cite{schaffner2014a,schaffner2014b}, as well as solar wind results~\cite{bruno2013}.
+Representative PDFs of both temporal and spatial magnetic field magnitude ($\Delta |B|$) increments are shown in Figure~\ref{fig:pdfs} with temporal PDFs on the left and spatial PDFs on the right. Each PDFs is scaled to its own standard deviation and total count so that they can be cross compared. The increments chosen for the temporal PDFs are $0.092\mu s$, $0.46\mu s$, and $1.85\mu s$ which correspond to frequencies of $10.8MHz$, $2.2MHz$, and $541kHz$ respectively. These three times also approximately correspond to three different regimes of the frequency spectra, called for lack of more accurate description the dissipation, transition and inertial region. All three PDFs exhibit intermittent behavior as indicated by the wings or ``fat tails'' for large fluctuation values which reflect larger counts compared to a true Gaussian distribution which is indicated by the dashed red curves. Note, though, that the qualitative ``level'' of intermittency decreases with increasing temporal increment, consistent with previous intermittency analyzes on SSX~\cite{schaffner2014a,schaffner2014b}, as well as solar wind results~\cite{bruno2013}.
 
 The increments chosen for the spatial PDFs are $0.46cm$, $0.92cm$, and $1.38cm$, which corresponds to the minimum, double the minimum, and triple the minimum separation possible given the probe array in the SSX. Unlike the temporal data, the spatial data is not believed to probe any as far into dissipation range scales (for reference, an ion inertial length of 0.6cm  and an ion gyroradius of 0.1cm is calculated in this plasma). Thus the spatial data is likely representative of inertial range turbulence and at most transition range. The resulting PDFs support this notion as they tend to have a more Gaussian-like feature for small fluctuations and only slightly elevated tails. There does appear to be a trend toward increasing Gaussian-ness with increasing increment similar to the temporal data. The curves do no appear as smooth as the temporal data though, as the histograms have larger breaks---in particular, the $0.46cm$ increment PDF. This potentially reflects both a lower amount of increment statistics available for the spatial measurement as well as the possible variations in the PDF due to spatial variation. 
 
-As discussed before, the use of PDFs of increments can clearly demonstrate the lack or presence of intermittent behavior in a signal, however in a primarily qualitative way. In order to demonstrate quantitative scaling behavior, and be able to extra more physical interpretations from the data, a structure function analysis is needed and is discussed in the next section.
+As discussed before, the use of PDFs of increments can clearly demonstrate the lack or presence of intermittent behavior in a signal, however in a primarily qualitative way. In order to demonstrate quantitative scaling behavior, and be able to extract more physical interpretations from the data, a structure function analysis is needed and is discussed in the next section.
 
 \section{Structure Functions and Scaling with Order}\label{sec:structs}
 
-To produce a more quantitative metric from the PDFs of increments, one can calculate moments of the histogram to any order $p$, and for each time or spatial delay $\Delta x$. This is equivalent to calculating the structure function for the magnetic field increments,
-%
-\begin{equation}
-S^{p}(\Delta x) = \langle|B(x_{j}+\Delta x)-B(x_{j})|^{p}\rangle
-\label{eq:structfunc}
-\end{equation}
-%
-where $p$ is the order of the power and the angle brackets indicate summation over all $j$ elements of B. Integer values of $p$ correspond to the moments of the PDF ($p=2$ is the second moment, $p=3$ is the third moment, etc.) though given the form of Equation~\ref{eq:structfunc}, $p$ is not restricted to integer values in the structure function formalization.
+To produce a more quantitative metric from the PDFs of increments, one can calculate moments of the histogram to any order $p$, and for each time or spatial delay $\Delta x$. This is equivalent to calculating the structure function in Equation~\ref{eq:structfunc} for the magnetic field increments. Integer values of $p$ correspond to the moments of the PDF ($p=2$ is the second moment, $p=3$ is the third moment, etc.) though given the form of Equation~\ref{eq:structfunc}, $p$ is not restricted to integer values in the structure function formalization.
 
 \begin{figure*}[!htbp]
 \centerline{
@@ -262,19 +188,26 @@ where $p$ is the order of the power and the angle brackets indicate summation ov
 \caption{\label{fig:flatness} }
 \end{figure}
 
-Analysis of structure functions can provide a number of features of the fluctuations. The slope of the structure function indicates the relative level of intermittency compared between two signals. That is, the steeper the slope, the more intermittent (i.e. the larger the ''fat tails``) is the signal. A flat line is the extreme case and indicates a lack of intermittency in the signal. As one woud expect, the structure function of a timeseries generated from a normal distribution has a flat structure function. Changes in slope with scale indicates a change in intermittency as a function of scale. It should be noted that this trend is not a perfect predictor of the presense of intermitttency however. It can be shown that a time-series of fractional Brownian motion can be constructed with the same structure function slope(Hnat GRL 2003), but fBm produces a Gaussian probability distribution of increments (DOES IT?). However, when intermittency is known to be present based on the PDF of increments (as is true for this SSX dataset) then the relationship between slope and degree of intermittency generally holds true.
+Analysis of structure functions can provide a number of features of the fluctuations. The slope of the structure function indicates the relative level of intermittency compared between two signals. That is, the steeper the slope, the more intermittent (i.e. the larger the ''fat tails``) is the signal. A flat line is the extreme case and indicates a lack of intermittency in the signal. As one would expect, the structure function of a timeseries generated from a normal distribution has a flat structure function. Changes in slope with scale indicates a change in intermittency as a function of scale. It should be noted that this trend is not a perfect predictor of the presence of intermittency however. It can be shown that a time-series of fractional Brownian motion can be constructed with the same structure function slope(Hnat GRL 2003), but fBm produces a Gaussian probability distribution of increments (DOES IT?). However, when intermittency is known to be present based on the PDF of increments (as is true for this SSX dataset) then the relationship between slope and degree of intermittency generally holds true.
 
-Figure~\ref{fig:structfuncs} shows the structure functions, $S^{p}(\Delta x)$, for temporal ($\Delta x = \Delta \tau$) data on the left and spatial ($\Delta x = \Delta r$) data on the right. The integer structure functions from $p=1$ to $p=6$ are shown. The structure functions vary as a function of $\tau$ or $r$ which confirms the presence of intermittency in the signal. For the temporal results, it is clear that this variation changes a function of time scale, with steeper slopes at small values of $\tau$ transitioning to shallower slopes at large values of $\tau$. This indicates that the relative degree of intermittency of the signal increases when analyzed at smaller scales. The transition range is also consistent with the transition from the inertial to the dissipation range of the cascade as determined by the change in spectral index of the frequency spectrum. This difference between inertial and dissipation range intermittency suggests that the physical mechanism underlying the dissipation dynamics has a more intermittent nature to it. Explanations for this behavior in the solar wind have typically center around the presence of current sheets in the magnetic turbulence(Osmin PRL 2014). The observation of this difference between dissipation and inertial range fluctuations in this laboratory plasma suggests a similar phenomena~\cite{schaffner2014b}. 
+Figure~\ref{fig:structfuncs} shows the structure functions, $S^{p}(\Delta x)$, for temporal ($\Delta x = \Delta \tau$) data on the left and spatial ($\Delta x = \Delta r$) data on the right. The integer structure functions from $p=1$ to $p=6$ are shown. The structure functions vary as a function of $\tau$ or $r$ which confirms the presence of intermittency in the signal. For the temporal results, it is clear that this variation changes as function of time scale, with steeper slopes at small values of $\tau$ transitioning to shallower slopes at large values of $\tau$. This indicates that the relative degree of intermittency of the signal increases when analyzed at smaller scales. The transition range is also consistent with the transition from the inertial to the dissipation range of the cascade as determined by the change in spectral index of the frequency spectrum. This difference between inertial and dissipation range intermittency suggests that the physical mechanism underlying the dissipation dynamics has a more intermittent nature to it. Explanations for this behavior in the solar wind have typically center around the presence of current sheets in the magnetic turbulence(Osmin PRL 2014). The observation of this difference between dissipation and inertial range fluctuations in this laboratory plasma suggests a similar phenomena~\cite{schaffner2014b}. 
 
-The spatial structure function do not show a variation with scale; however the slopes and thus the degree of intermittency is consistant with the temporal sturcture functions in the inertial range. Since the spatial meausrements can only probe inertial range scales in the plasma, this result supports the distinction between dissipation and inertial range intermittency seen in the temporal data.
+The spatial structure function do not show a variation with scale; however the slopes and thus the degree of intermittency is consistent with the temporal structure functions in the inertial range. Since the spatial measurements can only probe inertial range scales in the plasma, this result supports the distinction between dissipation and inertial range intermittency seen in the temporal data.
 
-A final characteristic, self-similarity of the turbulence, can be extracted from the structure function analysis by examining the slope of the structure functions as a function of order. In this context, the self-similarity is a qualitative measure of how alike fluctuations appear at different scales. A fractal from chaos theory is a construct that exhibits self-similarity. The red lines in Figure~\ref{fig:structfunc} are fits to the structure functions. In the temporal data, fits are done to two separate regions that correspond to the dissipation and inertial regions based on spectral frequency analysis, while the spatial data has only one fit for the entire region. A fit is made in each of these regions for each structure function using order $p$ which ranges between $0.1$ and $10$ in steps of $0.1$. The results of this scan are displayed in Figure~\ref{fig:slovesvsmom} for both time and space. The five separate magnetic field measurements are shown now, with inertial range fits indicate by solid lines and dissipation range fits indicate with dashed lines. In this construction, a timeseries that exhibits self-similarity would produce a line with a constant slope. As the increments are raised to increasingly higher powers, the value of the structure function should also increase exponentially. If the signal is self-similar, an increment between two points in the time series at one scale should have on average the same relative increment between two points at a different scale. In other words, a big fluctuation compared to a small fluctuation at one scale should appear to have the same relative ratio at a different scale. Thus, the structure function should change at a constant rate based on this ratio. If the signal is not self-similar, then the ratio is not constant and differences are increasingly accentuated by the raised exponent resulting in a non-linear scaling.
+It can also be instructive to normalize the structure functions and in particular highlight the ``level'' of non-Gaussianness of a distribution. A normalized structure function can be constructed as,
+\begin{equation}
+S_{norm}^{p}(\Delta x) = \frac{S^{p}(\Delta x)}{(S^2(\Delta x))^{(p/2)}}
+\label{eq:normstructfunc}
+\end{equation}
+where $p$ is the order of the moment. Using this normalized structure function, a Gaussian timeseries would have a constant value. For example, for $p=4$, this quantity becomes the flatness or kurtosis. Figure~\ref{fig:flatness} shows the flatness for both temporal and spatial. A Gaussian timeseries would have a constant value of 3. Both Figure~\ref{fig:flatness}(a) and (b) show an excursion from a Gaussian distribution at smaller increments, though it is clearly more pronounced for the temporal data.
 
-The original Kolmogorov turbulence theory in fact predicted a self-similar scaling such that the structure function slope would be equal to one-third of the power. The dashed purple line indicates this prediction in Figure~\ref{fig:slopesvsmom}. The inertial range curves for all five temporal magnetic measurements in Figure~\ref{fig:slopesvsmom}(a) sit relatively near the Kolmogorov theory line but none of the lines exhibiting completely linear behavior. This indicates that the inertial range fluctuations are not self-similar. The spatial curves in Figure~\ref{fig:slopesvsmom}(b) support this observation.
+A final characteristic, self-similarity of the turbulence, can be extracted from the structure function analysis by examining the slope of the structure functions as a function of order. In this context, the self-similarity is a qualitative measure of how alike fluctuations appear at different scales. A fractal from chaos theory is a construct that exhibits self-similarity. The red lines in Figure~\ref{fig:structfuncs} are fits to the structure functions. In the temporal data, fits are applied to two separate regions that correspond to the dissipation and inertial regions based on spectral frequency analysis, while the spatial data has only one fit for the entire region. A fit is made in each of these regions for each structure function using order $p$ which ranges between $0.1$ and $10$ in steps of $0.1$. The results of this scan are displayed in Figure~\ref{fig:slopevsmom} for both time and space. The five separate magnetic field measurements are shown now, with inertial range fits indicate by solid lines and dissipation range fits indicate with dashed lines. In this construction, a timeseries that exhibits self-similarity would produce a line with a constant slope. As the increments are raised to increasingly higher powers, the value of the structure function should also increase exponentially. If the signal is self-similar, an increment between two points in the time series at one scale should have on average the same relative increment between two points at a different scale. In other words, a big fluctuation compared to a small fluctuation at one scale should appear to have the same relative ratio at a different scale. Thus, the structure function should change at a constant rate based on this ratio. If the signal is not self-similar, then the ratio is not constant and differences are increasingly accentuated by the raised exponent resulting in a non-linear scaling.
+
+The original 1941 Kolmogorov turbulence theory~\cite{kolmogorov41} in fact predicted a self-similar scaling such that the structure function slope would be equal to one-third of the power. The dashed purple line indicates this prediction in Figure~\ref{fig:slopevsmom}. The inertial range curves for all five temporal magnetic measurements in Figure~\ref{fig:slopevsmom}(a) sit relatively near the Kolmogorov theory line but none of the lines exhibiting completely linear behavior. This indicates that the inertial range fluctuations are not self-similar. The spatial curves in Figure~\ref{fig:slopevsmom}(b) support this observation.
 
 The dissipation range curves, in contrast, are clearly linear. This indicates that the dissipation range fluctuations are self-similar while also having a larger degree of self-similarity than inertial range fluctuations.
 
-Like the Gaussian fits in Figure~\ref{pdfs}, the structure functions can be compared to the level of Gaussianness in the signal. Using a normalized structure function, a Gaussian timeseries would have a constant vale. For example, taking the normalized fourth order structure function (called kurtosis or flatness) yields a value of 3. 
+
 
 %To see intermittency most clearly, need a normaloized structue function. unnormalized Strcture function demonstrates a distinctive change in the scaling at different time scsales. that is different scaling behavior as a function of tau. we can model the scaling as S = a*tau^\psi
 
@@ -294,7 +227,7 @@ The structure function analysis is also used to examine the effect of varying th
 \caption{\label{fig:helscan} }
 \end{figure}
 
-Figure~\ref{fig:helscan} shows the slope versus order for eight different helicity states for inertial range fluctutations (solid lines) and dissipation range fluctuations (dashed lines) Recalling that the steepness of the slope is indicative of relative degree of intermittency, the order of the inertial range curves for each helicity indicates increasing intermittency with increasing helicity, again consistent with the findings for an analysis of $\dot{B}$ timeseries~\cite{schaffner2014b}. However, the structure function analysis here further shows that with the exception of the zero helicity state, the inertial range turbulence for any helicity is not self-similar. The dissipation range lines, however, show that the dissipation range intermittency is self-similar regardless of the amount of injected magnetic helicity in the plasma.
+Figure~\ref{fig:helscan} shows the slope versus order for eight different helicity states for inertial range fluctuations (solid lines) and dissipation range fluctuations (dashed lines) Recalling that the steepness of the slope is indicative of relative degree of intermittency, the order of the inertial range curves for each helicity indicates increasing intermittency with increasing helicity, again consistent with the findings for an analysis of $\dot{B}$ timeseries~\cite{schaffner2014b}. However, the structure function analysis here further shows that with the exception of the zero helicity state, the inertial range turbulence for any helicity is not self-similar. The dissipation range lines, however, show that the dissipation range intermittency is self-similar regardless of the amount of injected magnetic helicity in the plasma.
 
 \section{Discussion}
 
@@ -311,8 +244,23 @@ The value of this intermittency and structure function analysis lies in the abil
 \section*{References}
 \begin{thebibliography}{99}
 
+
 \bibitem{bruno2013}
 R. Bruno and V. Carbone. Living Rev Solar Phys {\bf 10} (2013).
+
+\bibitem{kolmogorov41} A. N. Kolmogorov, Dokl. Acad. Nauk. SSSR 30, 301, (1941).
+
+\bibitem{kiyani2013} K.H. Kiyani, S.C. Chapman, F. Sahraoui, B. Hnat, O. Fauvarque, and Yu.V. Khotyainsev. Enhanced Magnetic Compressibility and Isotropic Scale Invariance at Sub-Ion Larmor Scales in Solar Wind Turbulence. ApJ. {\bf 763} 10 (2013).
+
+\bibitem{schaffner2014a} D.A. Schaffner {\it et al.} Turbulence analysis of an experimental flux rope plasma. {\bf 56} 064003 (2014).
+
+\bibitem{schaffner2014b} D.A. Schaffner, A. Wan, and M. R. Brown, ``Observation of turbulent intermittency scaling with magnetic helicity in an MHD plasma wind-tunnel'', {\it Phys. Rev. Letters} {\bf 112}, 165001 (2014).
+
+\bibitem{schaffner2014c} D.A. Schaffner, M.R. Brown and V.S. Lukin. ``Temporal and Spatial Turbulent Spectra of MHD Plasma and an Observation of Variance Anisotropy''. {\it ApJ} {\bf 790}, 126 (2014).
+
+\bibitem{brown14} M.R. Brown and D.A. Schaffner. ``Laboratory sources of turbulent plasma: a unique MHD plasma wind tunnel''. {\it Plasma Sources and Science Technology}. {\bf 23} 063001 (2014).
+
+\bibitem{brown15a} M.R. Brown and D.A. Schaffner. ``SSX MHD plasma wind tunnel''. {\it Journal of Plasma Physics}. (2015).
 
 \bibitem{alexandrova09} O. Alexandrova, J. Saur, C. Lacombe, A. Mangeney, J. Mitchell, S.J. Schwartz, and P. Robert. Universality of Solar Wind Turbulent Spectrum from MHD to Electron Scales. Phys. Rev. Lett. {\bf 103} 165003 (2009).
 
@@ -376,13 +324,8 @@ R. Bruno and V. Carbone. Living Rev Solar Phys {\bf 10} (2013).
 
 \bibitem{deWit13} T. Dudok de Wit, O. Alexandrova, I. Furno, L. Sorriso-Valvo, G. Zimbardo, Methods for Characterising Microphysical Processes in Plasmas, Space Sci. Rev. {\bf 0038-6308}, p. 1-29 (2013).
 
-\bibitem{schaffner14a} D.A. Schaffner {\it et al.} Turbulence analysis of an experimental flux rope plasma. {\bf 56} 064003 (2014).
-
-\bibitem{schaffner14b} D.A. Schaffner {\it et al.} Observation of turbulent intermittency scaling with magnetic helicity in an MHD plasma wind-tunnel. Accepted by PRL April 2014.
 
 \bibitem{sorrisovalvo99}Sorriso-Valvo, L. {\it et al.} Geophys. Res. Lett. {\bf 26}, 1801–1804 (1999).
-
-\bibitem{kiyani13} K.H. Kiyani, S.C. Chapman, F. Sahraoui, B. Hnat, O. Fauvarque, and Yu.V. Khotyainsev. Enhanced Magnetic Compressibility and Isotropic Scale Invariance at Sub-Ion Larmor Scales in Solar Wind Turbulence. ApJ. {\bf 763} 10 (2013).
 
 \bibitem{sahraoui10} F. Sahraoui, M.L. Goldstein, G. Belmont, P. Canu and L. Rezeau. Three Dimensional Anisotropic {\it k} Spectra of Turbulence at Subproton Scales in the Solar Wind. Phys. Rev. Lett. {\bf 105} 131101 (2010).
 
@@ -446,15 +389,9 @@ R. Bruno and V. Carbone. Living Rev Solar Phys {\bf 10} (2013).
 
 %\bibitem{Gray13} T. Gray, M. R. Brown, and D. Dandurand. Phys. Rev. Lett. {\bf 110}, 085002 (2013). 
 
-
-
 %\bibitem{Taylor86} J. B. Taylor, Rev. Mod. Phys. {\bf 58}, 741 (1986).
 
 %\bibitem{Matthaeus80} W.H. Matthaeus and D. Montgomery, Ann. N.Y. Acad. Sci. {\bf 357}, 203 (1980).
-
-
-
-
 
 %\bibitem{wan12}M. Wan, K. T. Osman, W. H. Matthaeus, and S. Oughton, Investigation of intermittency in magnetohydrodynamics and solar wind turbulence: scale-dependent kurtosis, ApJ {\bf 744}, 171 (2012).
 
