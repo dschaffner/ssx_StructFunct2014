@@ -138,8 +138,8 @@ In particular, it has been shown that differences in self-similarity exist betwe
 \section{Temporal and Spatial PDFs of Increments}\label{sec:pdfs}
 
 \begin{figure*}
-%\epsscale{1.0}
-\includegraphics{Bmod_pdf_temporal_and_spatial_100313Shots41to80_forStructFuncpaper.png}
+\epsscale{1.0}
+\includegraphics{fig1.eps}
 \caption{\label{fig:pdfs}Probability Distribution Functions (PDFs) of increments for (a-c) temporal and (d-f) spatial measurements of $\Delta |B|$. The temporal increments are (a)$0.092\mu s$, (b)$0.46\mu s$, and (c)$1.85\mu s$ while the spatial increments are (d)$0.46$cm, (e)$0.92$cm, and (f)$1.38$cm. Both temporal and spatial PDFs exhibit non-Gaussian tails indicating intermittency (Gaussian distributions are indicated with dashed red lines), but that the level of intermittency decreases with increasing increment. Spatial PDFs appear to be slightly more asymmetric which may be a result of boundary effects or low resolution compared with temporal measurements.}
 \end{figure*}
 
@@ -154,14 +154,14 @@ As discussed before, the use of PDFs of increments can clearly demonstrate the l
 To produce a more quantitative metric from the PDFs of increments, one can calculate moments of the histogram to any order $p$, and for each time or spatial delay $\Delta x$. This is equivalent to calculating the structure function in Equation~\ref{eq:structfunc} for the magnetic field increments. Integer values of $p$ correspond to the moments of the PDF ($p=2$ is the second moment, $p=3$ is the third moment, etc.) though given the form of Equation~\ref{eq:structfunc}, $p$ is not restricted to integer values in the structure function formalization.
 
 \begin{figure*}
-%\epsscale{1.0}
-\includegraphics{Bmod_timeandspace_StructureFunction100313Shots41to80_forStructFuncpaper.png}
+\epsscale{1.0}
+\includegraphics{fig2.eps}
 \caption{\label{fig:structfuncs} Structure functions of temporal (left) and spatial (right) measurements for integer orders $p=1$ to $p=6$. Fits to regions of the temporal structure functions are made to compute scaling exponents, $\zeta$; separate regions are selected based on the breakdown of the frequency spectrum shown in Schaffner 2014c which occurs at approximatly 1MHz or 1$\mu s$. Spatial measurements likely span only the inertial range and thus only one region is fit. }
 \end{figure*}
 
 \begin{figure}
-%\epsscale{1.0}
-\includegraphics[width={\columnwidth}]{Bmod_timeandspace_Flatness100313Shots41to80_forStructFuncpaper.png}
+\epsscale{1.0}
+\includegraphics[width={\columnwidth}]{fig3.eps}
 \caption{\label{fig:flatness} Normalized fourth order structure functions (a.k.a flatness or kurtosis) for temporal (left) and spatial (right) measurements. The flatness of a Gaussian signal is indicated by the dashed line at F=3. Both figures show increasing flatness with decreasing scale indicating a rise in intermittency.}
 \end{figure}
 
@@ -183,8 +183,8 @@ Since the original Kolmogorov turbulence theory~\citep{kolmogorov1941} assumes a
 The dissipation range curves, in contrast, are clearly more linear. This indicates that the dissipation range fluctuations are monofractal while also having a higher level of intermittency than inertial range fluctuations. The Hurst exponents for the dissipation range are consistently about 1 for the various measured B values, steeper than the K41 prediction of H=1/3.
 
 \begin{figure}
-%\epsscale{1.0}
-\includegraphics[width={\columnwidth}]{Bfield_StructureFunctionSlope_vs_Moment_timeandspace_100313Shots41to80_forStructFuncpaper.png}
+\epsscale{1.0}
+\includegraphics[width={\columnwidth}]{fig4.eps}
 \caption{\label{fig:slopevsmom} Scaling exponent, $\zeta$, as a function of structure function order, $p$ for temporal (upper) and spatial (lower) measurements. Inertial range scaling is indicated by the bold lines, while dissipation range scaling is indicated by dashed lines. Temporal scaling shows a clear distinction between multifractal (non-linear $\zeta$ vs $p$) in the inertial range and monofractal (linear $\zeta$ vs $p$) in the dissipation range. The different color curves indicate the type of magnetic structure function used (i.e. B-component, B-vector magnitude, etc.) }
 \end{figure}
 
@@ -193,8 +193,8 @@ The dissipation range curves, in contrast, are clearly more linear. This indicat
 The structure function analysis is also used to examine the effect of varying the amount of magnetic helicity in the plasma on the intermittency and self-similarity of the magnetic fluctuations. Previous work has shown that the degree of intermittency in fluctuations of $\dot{B}=dB/dt$ (not $B$), as determined by a calculation of the flatness, increases on average with an increasing amount of injected magnetic helicity~\citep{schaffner2014b}. This work revisits that result by examining the trend in $B$ using unnormalized structure functions and the resulting relationship between structure function slope and $p$. 
 
 \begin{figure}
-%\epsscale{1.0}
-\includegraphics[width={\columnwidth}]{Bmod_StructureFunctionSlope_vs_Moment_helicityscan.png}
+\epsscale{1.0}
+\includegraphics[width={\columnwidth}]{fig5.eps}
 \caption{\label{fig:helscan} Scaling exponent versus order for different values of magnetic helicity (as set by the amount of initial flux in the plasma gun~\citep{schaffner2014b}). Inertial range intermittency increases with helicity as shown by increasingly steeper curves in the inertial range. Dissipation range scaling appears to be unaffected by the change in helicity. }
 \end{figure}
 
@@ -202,7 +202,7 @@ Figure~\ref{fig:helscan} shows the slope versus order for eight different helici
 
 \section{Discussion}
 
-The observation of both multifractal and monofractal scaling of magnetic fluctuation structure functions in SSX has implications for both the dissipative nature of the turbulence and for the universality of MHD turbulence. Like that observed in Kiyani 2013, the transition between multifractal scaling of the inertial range and monofractal scaling of the dissipation range is rapid. This suggests that the dissipation mechanism is independent of the scale of the turbulence structures---in other words, the dissipation scale is absolute rather than relative. This is in contrast to the predictions and observations made for hydrodynamic turbulence where viscosity is the known dissipation mechanism. In those cases, each scaling exponent has a corresponding dissipation scale due to the viscosity. As smaller and smaller scales are approached, the viscosity ``shuts-off'' the scaling exponents gradually producing a scaling transition region from multifractal inertial to monofractal dissipation ranges~\citep{benzi1984,frisch1991}. If the dissipation mechanism has an absolute scale, independent of each scaling exponent, than a rapid transition would be observed as this absolute scale is passed. Kiyani 2010 discusses this possibility that a dissipation scale associated with the ion inertial length may be at play. However, it is often difficult to distinguish the ion gyroscale ($\rho_i$) effects versus ion inertial scale ($\delta_i$) effects in super-Alfvenic solar wind since $\beta \approx 1$. This laboratory turbulence, however, has a more resolved separation between $\rho_i$ and $\delta_i$)~\citep{schaffner2014c}, and the results presented here show the multifractal to monofractal scaling transition occurring at around $\delta_i$ rather than $\rho_i$. Though evidence for the existence of current sheets has been demonstrated in previous SSX experiments on reconnection using stable spheromaks~\citep{brown2012}, more concrete evidence for the presence of current sheets in this more turbulent SSX plasma is still being sought; however, there is preliminary evidence from the helicity scan work~\citep{schaffner2014b} that these current sheets may indeed be present. These current sheets, then, could play the role of an absolute dissipation scale. It should be noted, however, that an alternative solar wind intermittency analysis~\citep{alexandrova2008} does not exhibit a transition in scaling from inertial to dissipation range and the authors of this work suggest the existence of a compressible inertial range cascade rather than a dissipation range.
+The observation of both multifractal and monofractal scaling of magnetic fluctuation structure functions in SSX has implications for both the dissipative nature of the turbulence and for the universality of MHD turbulence. Like that observed in Kiyani 2013, the transition between multifractal scaling of the inertial range and monofractal scaling of the dissipation range is rapid. This suggests that the dissipation mechanism is independent of the scale of the turbulence structures---in other words, the dissipation scale is absolute rather than relative. This is in contrast to the predictions and observations made for hydrodynamic turbulence where viscosity is the known dissipation mechanism. In those cases, each scaling exponent has a corresponding dissipation scale due to the viscosity. As smaller and smaller scales are approached, the viscosity ``shuts-off'' the scaling exponents gradually producing a scaling transition region from multifractal inertial to monofractal dissipation ranges~\citep{benzi1984,frisch1991}. If the dissipation mechanism has an absolute scale, independent of each scaling exponent, than a rapid transition would be observed as this absolute scale is passed. Kiyani 2010 discusses this possibility that a dissipation scale associated with the ion inertial length may be at play. However, it is often difficult to distinguish the ion gyroscale ($\rho_i$) effects versus ion inertial scale ($\delta_i$) effects in super-Alfvenic solar wind since $\beta \approx 1$. This laboratory turbulence, however, has a more resolved separation between $\rho_i$ and $\delta_i$~\citep{schaffner2014c}, and the results presented here show the multifractal to monofractal scaling transition occurring at around $\delta_i$ rather than $\rho_i$. Though evidence for the existence of current sheets has been demonstrated in previous SSX experiments on reconnection using stable spheromaks~\citep{brown2012}, more concrete evidence for the presence of current sheets in this more turbulent SSX plasma is still being sought; however, there is preliminary evidence from the helicity scan work~\citep{schaffner2014b} that these current sheets may indeed be present. These current sheets, then, could play the role of an absolute dissipation scale. It should be noted, however, that an alternative solar wind intermittency analysis~\citep{alexandrova2008} does not exhibit a transition in scaling from inertial to dissipation range and the authors of this work suggest the existence of a compressible inertial range cascade rather than a dissipation range.
 
 Another interesting comparison between the results in Kiyani 2013 and those presented here is the difference in collisionality. The solar wind is a collisionless plasma with mean free path lengths on the order of an astronomical unit (AU). The SSX plasma, while still fully ionized, is a collisional plasma with ion mean free path lengths on the order of 0.1cm, a bit less than one order of magnitude smaller than the ion inertial length~\citep{schaffner2014c}. While in MHD turbulence theory, resistivity can be thought to play a role for magnetic turbulence as viscosity would for velocity turbulence, the resistivity does not appear to have the same affect for dissipation given the comparison in scaling between the collisionless solar wind and the collisional laboratory plasma. This result begs the question of what role ion viscosity might have in the turbulent dissipation process as well as indicate possible universality of MHD turbulence regardless of collisionality.
 
